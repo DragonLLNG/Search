@@ -146,7 +146,7 @@ public class MyFavoritesFragment extends Fragment {
 
                         FirebaseFirestore db = FirebaseFirestore.getInstance();
                         db.collection("Images")
-                                .document(image.date)
+                                .document(image.id)
                                 .delete()
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override

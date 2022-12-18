@@ -3,13 +3,14 @@ package com.example.finalexam;
 import java.io.Serializable;
 
 public class Image implements Serializable {
-    String url, description, date, userName, userIcon, userLink;
+    String id, url, description, date, userName, userIcon, userLink;
     boolean liked;
 
     public Image() {
     }
 
-    public Image(String url, String description, String date, String userName, String userIcon, String userLink, boolean liked) {
+    public Image(String id, String url, String description, String date, String userName, String userIcon, String userLink, boolean liked) {
+        this.id = id;
         this.url = url;
         this.description = description;
         this.date = date;
@@ -17,6 +18,14 @@ public class Image implements Serializable {
         this.userIcon = userIcon;
         this.userLink = userLink;
         this.liked = liked;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUserLink() {

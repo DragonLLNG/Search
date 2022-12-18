@@ -274,11 +274,14 @@ public class SearchFragment extends Fragment {
 
                             DocumentReference docRef = db.collection("Images").document();
                             docRef.update("id",docRef.getId());
+                            image.id = docRef.getId();
                             image.liked = true;
                             docRef.set(image).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
+
+                                        Log.d("store", "onComplete: " + image);
 
                                     }
 
